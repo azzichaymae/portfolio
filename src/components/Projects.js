@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Projects() {
 
     const [showVideo, setShowVideo] = useState(false);
+     const [videoName, setVideoName] = useState("");
 
   const tabs = [
     { label: "Projects", key: "projects" },
@@ -18,7 +19,7 @@ export default function Projects() {
     {
       title: "Mugs Atelier",
       description:
-        "A full-featured e-commerce platform for custom mug sales. Users can browse, personalize, and purchase mugs. Built with React.js for the frontend, Django for the backend, and MySQL for data storage. Project management handled via Jira.",
+        "A robust e-commerce platform for custom mug sales. Users can browse, personalize, and securely purchase mugs. The frontend is built with React.js, the backend with Django, and MySQL handles data storage. Project tasks were managed using Jira.",
       tech: ["React", "Django", "MySQL", "Tailwind CSS", "Jira"],
       github: "https://github.com/azzichaymae/Mugs-atelier",
       picture: "/images/ma.png",
@@ -26,55 +27,58 @@ export default function Projects() {
     {
       title: "Contactly",
       description:
-        "A CRM-inspired web application for managing contacts, companies, and deals. Developed using Symfony and MySQL, it features CRUD operations, search, and user authentication.",
+        "A CRM-style web app for managing contacts, companies, and deals. Features include CRUD operations, advanced search, and user authentication. Built with Symfony and MySQL for reliability and scalability.",
       tech: ["Symfony", "MySQL", "Bootstrap"],
       github: "https://github.com/azzichaymae/ContactlyProject",
-      
       picture: "/images/contact.png",
     },
     {
       title: "BuildFolio",
       description:
-        "A portfolio builder app that allows users to create and customize their own professional portfolios. Built with SpringBoot for the backend, React for the frontend and MySQL for persistent storage.",
+        "A portfolio builder application enabling users to create and customize professional portfolios. Utilizes SpringBoot for the backend, React for the frontend, and MySQL for persistent data storage.",
       tech: ["SpringBoot", "React", "MySQL", "Bootstrap", "Tailwind CSS"],
-      github: "https://github.com/azzichaymae/buildfolio/tree/master",
-      
+      github: "https://github.com/azzichaymae/Buildfolio",
       picture: "/images/builfolio.png",
     },
     {
       title: "SUPAbscence",
       description:
-        "A desktop application designed to automate student absence management. Built with JavaFX, it streamlines attendance tracking and generates Excel reports automatically. Developed as an innovative solution during my studies at SUPMTI.",
+        "A desktop app for automating student absence management. Built with JavaFX, it streamlines attendance tracking and generates Excel reports. Developed as an innovative solution at SUPMTI.",
       tech: ["JavaFX", "MySQL"],
-      github: "",
-      
+      github: "https://github.com/azzichaymae/SUPAbscence",
       picture: "/images/ab2.jpg",
     },
     {
       title: "Les Douceures de Maroc",
       description:
-        "A responsive website for a Moroccan sweets business, showcasing products and enabling online orders. Developed with React and Bootstrap for a seamless user experience.",
+        "A responsive website for a Moroccan sweets business, showcasing products and enabling online orders. Developed with React and Bootstrap for a seamless and engaging user experience.",
       tech: ["React", "Bootstrap", "Typescript"],
-      github: "https://github.com/azzichaymae/projet2",
+      github: "",
       live: "https://www.faragroupe.fr/",
       picture: "/images/faragroupe.png",
     },
     {
       title: "Task Master",
       description:
-        "A desktop application for efficient task and time management, featuring to-do lists, reminders, and progress tracking. Built with JavaFX for a responsive and intuitive user interface.",
+        "A desktop application for efficient task and time management. Features to-do lists, reminders, and progress tracking, all within a responsive JavaFX interface.",
       tech: ["JavaFX", "MySQL", "Bootstrap"],
-      github: "https://github.com/yourusername/task-master",
-      
+      github: "https://github.com/azzichaymae/TaskMaster.git",
       picture: "/images/task.png",
+    },
+    {
+      title: "Ressources_Pro",
+      description:
+        "A web platform for managing professional resources and vacation requests. Built with native PHP and Bootstrap, it offers a user-friendly interface for HR operations.",
+      tech: ["PHP", "MySQL", "Bootstrap"],
+      github: "https://github.com/azzichaymae/TaskMaster.git",
+      picture: "/images/rh.png",
     },
     {
       title: "Insurance Platform",
       description:
-        "A web-based platform for managing insurance policies, clients, and payments. Developed during an internship at Sangam using Laravel for the backend and React for the frontend. Includes dashboards, reporting, and secure authentication.",
+        "A web-based platform for managing insurance policies, clients, and payments. Developed during an internship at Sangam using Laravel and React. Features dashboards, reporting, and secure authentication.",
       tech: ["Laravel", "React", "MySQL", "Bootstrap"],
       github: "https://github.com/azzichaymae/Projet_SANLAM",
-      
       picture: "/images/Picture1.png",
     },
   ];
@@ -137,7 +141,7 @@ const ProjectCard = ({ project, index }) => (
           <a
             {...(project.live
               ? { href: project.live, target: "_blank", rel: "noopener noreferrer" }
-              : { onClick: (e) => { e.preventDefault(); setShowVideo(true); } }
+              : { onClick: (e) => { e.preventDefault(); setShowVideo(true); setVideoName(project.title)} }
             )}
             aria-label={`View live demo of ${project.title}`}
             className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-orange-600 hover:to-orange-700 transition-all"
@@ -288,7 +292,8 @@ const ProjectCard = ({ project, index }) => (
                   &times;
                 </button>
                 <video
-                  src="/videos/Faragroup.mp4"
+                 
+                   src={`/videos/${videoName}.mp4`}
                   controls
                   autoPlay
                   className="rounded-xl shadow-lg w-full"
