@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "../hooks/useI18n";
+
 
 export default function Navbar() {
+      const { t } = useI18n();
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -10,11 +15,12 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "navbar.home", href: "#home" },
+    { label: "navbar.about", href: "#about" },
+    { label: "navbar.projects", href: "#projects" },
+    { label: "navbar.contact", href: "#contact" },
   ];
+const [lang, setLang] = useState("EN");
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md">
@@ -26,15 +32,17 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 font-medium text-gray-700 dark:text-gray-200">
           {navItems.map((item) => (
-            <li key={item.label}>
+            <li key={t(item.label)}>
               <a
                 href={item.href}
                 className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200"
               >
-                {item.label}
+                {t(item.label)}
               </a>
             </li>
           ))}
+          <LanguageSwitcher currentLang={lang} setLang={setLang} />
+
         </ul>
 
         {/* Mobile Menu Button */}

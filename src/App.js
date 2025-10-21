@@ -9,11 +9,15 @@ import Footer from './components/Footer';
 import AIChat from './components/AiChat';
 import ScrollSection from './components/ScrollSection';
 import './App.css';
+import './i18n';
+
 
 function App() {
+  
   return (
     <div className=" text-[#111827] font-sans">
       <Navbar />
+       
       <main className='bg-gradient-to-b from-orange-50 to-blue-60'>
        <ScrollSection><Hero /></ScrollSection>
         <ScrollSection><About /></ScrollSection>

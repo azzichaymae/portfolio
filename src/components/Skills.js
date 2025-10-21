@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from "../hooks/useI18n";
 import {
   FaReact,
   FaLaravel,
@@ -32,11 +33,12 @@ const skills = [
 ];
 
 const Skills = () => {
+   const { t } = useI18n();
   return (
     <section id="skills" className=" pb-10 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-8">
-          Skills & Tools
+          {t('Skills.title')}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {skills.map((skill, index) => (

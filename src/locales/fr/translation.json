@@ -1,0 +1,63 @@
+{
+  "navbar" : {
+    "home" : "Accueil",
+    "about" : "À propos",
+    "projects" : "Projets"
+  },
+  "AboutMe": {
+    "title": "À propos de moi",
+    "description1": "Je suis <1>Chaymae Azzi</1>, une développeuse dévouée et ambitieuse <3>Full Stack et aspirante ingénieure logicielle</3>, actuellement en cinquième année du programme d'ingénierie logicielle à <5>SUPMTI</5>. Compétente en React.js, Laravel, Django, SpringBoot et MySQL, je crée des applications complètes — de la conception d'interfaces à la gestion de la persistance des données — et j'aime transformer des idées en solutions fonctionnelles et conviviales.",
+    "description2": "Polyvalente et passionnée par la technologie, la résolution de problèmes et l'apprentissage continu, je m'efforce d'écrire du code propre, de proposer des solutions créatives et de contribuer à des projets innovants de bout en bout.",
+    "button": "Découvrez mon travail"
+  },
+  "Hero": {
+    "greeting": "Salut, je suis <1>Chaymae</1>",
+    "about": "Une passionnée <1>Full Stack Developer</1> qui adore construire des expériences numériques élégantes et efficaces.",
+    "work": "Voir mon travail",
+    "download": "Télécharger mon CV"
+  },
+  "Skills": {
+    "title": "Compétences & Outils"
+  },
+  "Projects": {
+    "title": "Mes Projets",
+        "p1": "Une plateforme e-commerce robuste pour la vente de mugs personnalisés. Les utilisateurs peuvent parcourir, personnaliser et acheter des mugs en toute sécurité. Le frontend est construit avec React.js, le backend avec Django, et MySQL gère le stockage des données. Les tâches du projet ont été gérées à l'aide de Jira.",
+    "p2": "Une application web de type CRM pour la gestion des contacts, des entreprises et des affaires. Les fonctionnalités incluent les opérations CRUD, la recherche avancée et l'authentification des utilisateurs. Construite avec Symfony et MySQL pour la fiabilité et l'évolutivité.",
+    "p3": "Une application de création de portfolio permettant aux utilisateurs de créer et de  personnaliser des portfolios professionnels. Utilise SpringBoot pour le backend, React pour le frontend et MySQL pour le stockage persistant des données.",
+    "p4": "Une application de bureau pour automatiser la gestion des absences des étudiants. Construite avec JavaFX, elle simplifie le suivi des présences et génère des rapports Excel. Développée comme une solution innovante à SUPMTI.", 
+    "p5": "Un site web réactif pour une entreprise de douceurs marocaines, présentant les produits et permettant les commandes en ligne. Développé avec React et Bootstrap pour une expérience utilisateur fluide et engageante.",
+    "p6": "Une application de bureau pour une gestion efficace des tâches et du temps. Comprend des listes de tâches, des rappels et le suivi des progrès, le tout dans une interface JavaFX réactive.",
+    "p7": "Une plateforme web pour la gestion des ressources professionnelles et des demandes de congés. Construite avec PHP natif et Bootstrap, elle offre une interface conviviale pour les opérations RH.",
+    "p8": "Une plateforme web pour la gestion des polices d'assurance, des clients et des paiements. Développée lors d'un stage chez SANLAM en utilisant Laravel et React. Comprend des tableaux de bord, des rapports et une authentification sécurisée.",
+    "showMore": "Voir plus",
+    "showLess": "Voir moins",
+    "certificates": "Certificats",
+    "projects" : "Projets",
+    "tech":"Tech",
+    "issuer": "Organisme ",
+    "year" : "Année",
+    "cer1": "Introduction à la science des données",
+    "cer2":  "Certificat de participation active à un atelier sur les soft skills",
+    "cer3" : "Certification Microsoft Office Expert",
+    "cer4" : "Certificat de formation en informatique bureautique"
+},
+"Contact" :{
+  "title" : "Contactez-moi",
+  "fn" : "Votre prénom",
+  "ln" : "Votre nom",
+  "email" : "Votre adresse e-mail",
+  "msg" : "Votre message",
+  "sending" : "Envoi...",
+  "send" : "Envoyer Message",
+  "errorfn": "Prénom est obligatoire",
+  "errorln" : "Nom est obligatoire",
+  "emailformat" : "Adresse e-mail invalide",
+  "errorem" : "Adresse e-mail obligatoire",
+  "errormsg" : "Message est obligatoire",
+    "success" : "Message envoyé avec succès !",
+  "fail": "Échec de l'envoi du message, veuillez réessayer."
+
+},
+"pdf" : "Télécharger mon CV (PDF)"
+
+}

@@ -1,0 +1,64 @@
+{
+   "navbar" : {
+    "home" : "Home",
+    "about" : "About",
+    "projects" : "Projects",
+    "contact" : "Contact"
+  },
+  "AboutMe":{
+    "title": "About Me",
+    "description1": "I’m <1>Chaymae Azzi</1>, a dedicated and ambitious <3>Full Stack Developer and aspiring Software Engineer</3>, currently in my fifth year of the Software Engineering program at <5>SUPMTI</5>. Skilled in React.js, Laravel, Django, SpringBoot, and MySQL, I build complete applications—from designing interfaces to managing data persistence—and enjoy turning ideas into functional, user-friendly solutions.",
+    "description2": "  Versatile and passionate about technology, problem-solving, and continuous learning, I focus on writing clean code, delivering creative solutions, and contributing to innovative end-to-end projects.",
+    "button": "Explore My Work"
+  },
+  "Hero": {
+    "greeting": "Hi, I’m <1>Chaymae</1>",
+    "about": "A passionate <1>Full Stack Developer</1> who loves building elegant and efficient digital experiences.",
+    "work": "View My Work",
+    "download": "Download CV"
+
+  },
+  "Skills": {
+    "title": "Skills & Tools"
+  },
+  "Projects": {
+    "title": "My Work",
+    "p1": "A robust e-commerce platform for custom mug sales. Users can browse, personalize, and securely purchase mugs. The frontend is built with React.js, the backend with Django, and MySQL handles data storage. Project tasks were managed using Jira.",
+    "p2": "A CRM-style web app for managing contacts, companies, and deals. Features include CRUD operations, advanced search, and user authentication. Built with Symfony and MySQL for reliability and scalability.",
+    "p3": "A portfolio builder application enabling users to create and customize professional portfolios. Utilizes SpringBoot for the backend, React for the frontend, and MySQL for persistent data storage.",
+    "p4":"A desktop app for automating student absence management. Built with JavaFX, it streamlines attendance tracking and generates Excel reports. Developed as an innovative solution at SUPMTI.",
+    "p5": "A responsive website for a Moroccan sweets business, showcasing products and enabling online orders. Developed with React and Bootstrap for a seamless and engaging user experience.",
+    "p6":  "A desktop application for efficient task and time management. Features to-do lists, reminders, and progress tracking, all within a responsive JavaFX interface.",
+    "p7": "A web platform for managing professional resources and vacation requests. Built with native PHP and Bootstrap, it offers a user-friendly interface for HR operations.",
+    "p8":  "A web-based platform for managing insurance policies, clients, and payments. Developed during an internship at SANLAM using Laravel and React. Features dashboards, reporting, and secure authentication.",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "certificates": "Certificates",
+    "projects" : "Projects",
+    "tech":"Tech",
+    "issuer" : "Issuer",
+    "year": "Year",
+    "cer1": "Introduction to Data Science",
+       "cer2":  "Active Participation in a Soft Skills Workshop Certificate",
+       "cer3" : "Microsoft Office Expert Certification",
+       "cer4" : "Certificate of Training in Office Computing"
+  },
+  "Contact": {
+    "title" : "Contact Me",
+    "fn": "Your first name",
+    "ln" : "Your last name",
+    "email" : "Your e-mail",
+    "msg": "Your message",
+    "sending" : "Sending...",
+    "send" : "Send Message",
+    "errorfn": "First name is required",
+  "errorln" : "Last name is required",
+  "emailformat" : "Invalid email format",
+  "errorem" : "Email is required",
+  "errormsg" : "Message is required",
+  "success" : "Message sent successfully!",
+  "fail": "Failed to send the message, please try again."
+  },
+  "pdf" : "Download My Resume (PDF)"
+
+}

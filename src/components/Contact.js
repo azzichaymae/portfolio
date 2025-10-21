@@ -3,26 +3,27 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import Modal from "react-modal";
-
+import { useI18n } from "../hooks/useI18n";
 Modal.setAppElement("#root");
 
 const Contact = () => {
+    const { t } = useI18n();
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("First name is required"),
-    lastName: Yup.string().required("Last name is required"),
+    firstName: Yup.string().required(t("Contact.errorfn")),
+    lastName: Yup.string().required(t("Contact.errorln")),
     email: Yup.string()
     .matches(
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      "Invalid email format"
+      t("Contact.emailformat")
     )
-    .required("Email is required"),
+    .required(t("Contact.errorem")),
 
-    message: Yup.string().required("Message is required"),
+    message: Yup.string().required(t("Contact.errormsg")),
   });
 
   const sendEmail = (values, { resetForm }) => {
@@ -32,13 +33,13 @@ const Contact = () => {
       .send("service_6y3ju3b", "template_p7xit9o", values, "ixni1J5sAPLDKH07U")
       .then(
         () => {
-          setModalMessage("Message sent successfully!");
+          setModalMessage(t("Contact.success"));
           setIsSuccess(true);
           setIsModalOpen(true);
           resetForm();
         },
         () => {
-          setModalMessage("Failed to send the message, please try again.");
+          setModalMessage(t("Contact.fail"));
           setIsSuccess(false);
           setIsModalOpen(true);
         }
@@ -52,7 +53,7 @@ const Contact = () => {
     <section id="contact" className="py-20 px-6">
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-8">
-          Contact Me
+          {t("Contact.title")}
         </h2>
 
         <Formik
@@ -70,7 +71,7 @@ const Contact = () => {
               <div className="w-full">
                 <Field
                   name="firstName"
-                  placeholder="Your First Name"
+                  placeholder={t("Contact.fn")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 />
                 <ErrorMessage name="firstName" component="div" className="text-red-500 text-sm" />
@@ -78,7 +79,7 @@ const Contact = () => {
               <div className="w-full">
                 <Field
                   name="lastName"
-                  placeholder="Your Last Name"
+                  placeholder={t("Contact.ln")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 />
                 <ErrorMessage name="lastName" component="div" className="text-red-500 text-sm" />
@@ -88,7 +89,7 @@ const Contact = () => {
             <Field
               name="email"
               type="email"
-              placeholder="Your Email"
+              placeholder={t("Contact.email")}
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
             />
             <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
@@ -97,7 +98,7 @@ const Contact = () => {
               name="message"
               as="textarea"
               rows="5"
-              placeholder="Your Message"
+              placeholder={t("Contact.msg")}
               className="w-full px-4 py-2 border border-gray-300 rounded-md"
             />
             <ErrorMessage name="message" component="div" className="text-red-500 text-sm" />
@@ -107,7 +108,7 @@ const Contact = () => {
               disabled={isLoading}
               className="bg-[#F97316] hover:bg-[#ea580c] text-white px-6 py-2 rounded-md font-medium transition"
             >
-              {isLoading ? "Sending..." : "Send Message"}
+              {isLoading ? t("Contact.sending") : t("Contact.send")}
             </button>
           </Form>
         </Formik>
@@ -118,7 +119,7 @@ const Contact = () => {
             download
             className="text-[#F97316] underline hover:text-[#ea580c]"
           >
-            Download My Resume (PDF)
+            {t("pdf")}
           </a>
         </div>
       </div>
