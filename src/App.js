@@ -10,6 +10,7 @@ import AIChat from './components/AiChat';
 import ScrollSection from './components/ScrollSection';
 import './App.css';
 import './i18n';
+import { Analytics } from "@vercel/analytics/next"
 
 
 function App() {
