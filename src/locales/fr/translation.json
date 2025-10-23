@@ -12,7 +12,8 @@
   },
   "Hero": {
     "greeting": "Salut, je suis <1>Chaymae</1>",
-    "about": "Une passionnée <1>Full Stack Developer</1> qui adore construire des expériences numériques élégantes et efficaces.",
+      
+    "about": "Allier créativité et performance — <1>Développeuse Full Stack & Future Ingénieure Logicielle</1>",
     "work": "Voir mon travail",
     "download": "Télécharger mon CV"
   },
