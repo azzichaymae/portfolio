@@ -8,6 +8,7 @@ const AIChat = () => {
   ]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isTyping, setIsTyping] = useState(false); // 👈 typing state
   const scrollRef = useRef(null);
 
   // Gemini setup
@@ -15,62 +16,62 @@ const AIChat = () => {
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isTyping]);
 
   const sendMessage = async () => {
-  if (!input.trim()) return;
+    if (!input.trim()) return;
 
-  const newMessages = [...messages, { role: "user", content: input }];
-  setMessages(newMessages);
-  setInput("");
+    const newMessages = [...messages, { role: "user", content: input }];
+    setMessages(newMessages);
+    setInput("");
+    setIsTyping(true); // 👈 start typing animation
 
-  try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    try {
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const chat = model.startChat({
-      history: [
-        {
-          role: "user",
-          parts: [
-            {
-              text: `
-              You are Chaymae Azzi, a Full Stack Developer and software engineering student.
-              Skills: React, Django, SpringBoot, Laravel, JavaFX, Symfony, MySQL, and you are conftorbale more with javascript framworks and also pythonf for backend and for the desktop application you use a lot javafx.
-              Projects: a lot of projects that you have done academicaly and also in internships : Mugs Atelier(final year project), Contactly(academic to get to know more about symfony in which you developed both backend and frontend usin,g only symfony), BuildFolio(academic to get to know more springboot in which you used it for the backend part), Insurance Platform(final studies internship), Task Master.
-              Education: Technical specialist diploma, Bachelor in English Studies, future computer systems engeneer, currently a 
-              5th-year software engineering student at SUPMTI.
-              Interests: Technology, problem-solving, continuous learning.
-              Answer questions as Chaymae would, friendly, concisely and professional.
-              Answer vague questions by demanding a little bit a precision and context. answer questions shortly and dont be too friendly
-              `,
-            },
-          ],
-        },
-        ...messages.map((msg) => ({
-          role: msg.role === "assistant" ? "model" : "user", // 🔥 map assistant → model
-          parts: [{ text: msg.content }],
-        })),
-      ],
-    });
+      const chat = model.startChat({
+        history: [
+          {
+            role: "user",
+            parts: [
+              {
+                text: `
+                You are Chaymae Azzi, a Full Stack Developer and software engineering student.
+                Skills: React, Django, SpringBoot, Laravel, JavaFX, Symfony, MySQL.
+                You are most comfortable with JavaScript frameworks and Python for backend.
+                For desktop apps, you use JavaFX.
+                Projects: Mugs Atelier (final year project), Contactly (Symfony), BuildFolio (Spring Boot), 
+                Insurance Platform (internship), Task Master, and others.
+                Education: Technical specialist diploma, Bachelor in English Studies, and currently a 
+                5th-year software engineering student at SUPMTI.
+                Interests: Technology, problem-solving, and continuous learning.
+                Respond as Chaymae would — professional, concise, friendly, and natural.
+                Ask for clarification if a question is vague.
+                `,
+              },
+            ],
+          },
+          ...messages.map((msg) => ({
+            role: msg.role === "assistant" ? "model" : "user",
+            parts: [{ text: msg.content }],
+          })),
+        ],
+      });
 
-    const result = await chat.sendMessage(input);
+      const result = await chat.sendMessage(input);
+      const aiResponse = result.response.text();
 
-    setMessages([
-      ...newMessages,
-      { role: "assistant", content: result.response.text() }, // still use assistant in UI
-    ]);
-  } catch (error) {
-    setMessages([
-      ...newMessages,
-      {
-        role: "assistant",
-        content: "Oops! Something went wrong. Please try again.",
-      },
-    ]);
-    console.error(error);
-  }
-};
-
+      setMessages([...newMessages, { role: "assistant", content: aiResponse }]);
+    } catch (error) {
+      console.error(error);
+      setMessages([
+        ...newMessages,
+        { role: "assistant", content: "Oops! Something went wrong. Please try again." },
+      ]);
+    } finally {
+      setIsTyping(false); // 👈 stop typing animation
+    }
+  };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") sendMessage();
@@ -120,6 +121,18 @@ const AIChat = () => {
                 </div>
               </div>
             ))}
+
+            {/* Typing indicator */}
+            {isTyping && (
+              <div className="flex items-center gap-2 text-gray-500">
+                <FaRobot className="text-orange-500" />
+                <div className="flex space-x-1">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input */}
