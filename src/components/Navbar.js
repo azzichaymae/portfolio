@@ -74,10 +74,12 @@ const [lang, setLang] = useState("EN");
                     className="text-lg hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item.label}
+                      {t(item.label)}
                   </a>
                 </li>
               ))}
+                        <LanguageSwitcher currentLang={lang} setLang={setLang} />
+
             </ul>
           </motion.div>
         )}
