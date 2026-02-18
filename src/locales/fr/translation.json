@@ -18,7 +18,9 @@
     "download": "Télécharger mon CV"
   },
   "Skills": {
-    "title": "Compétences & Outils"
+    "title": "Compétences & Outils",
+    "Database & Cloud" : "Base de données & Cloud",
+    "Tools" : "Outils"
   },
   "Projects": {
     "title": "Mes Projets",

@@ -89,7 +89,7 @@ const Skills = () => {
                 className="w-full flex justify-between items-center px-6 py-4 bg-gray-50 hover:bg-gray-100 transition"
               >
                 <span className="font-semibold text-gray-800">
-                  {category.title}
+                  {t(`Skills.${category.title}`) || category.title}
                 </span>
                 <FiChevronDown
                   className={`transition-transform duration-300 ${

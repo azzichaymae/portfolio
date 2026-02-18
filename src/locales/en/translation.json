@@ -19,7 +19,11 @@
 
   },
   "Skills": {
-    "title": "Skills & Tools"
+    "title": "Skills & Tools",
+    "Database & Cloud" : "Database & Cloud",
+    "Tools" : "Tools",
+    "Backend" : "Backend",
+    "Frontend" : "Frontend"
   },
   "Projects": {
     "title": "My Work",
