@@ -9,7 +9,6 @@ import {
   FaJs,
   FaPhp,
   FaGitAlt,
-  FaFigma,
   FaBootstrap,
   FaAngular,
 } from "react-icons/fa";

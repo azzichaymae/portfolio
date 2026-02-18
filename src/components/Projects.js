@@ -14,7 +14,7 @@ export default function Projects() {
     { label: "Projects.tech", key: "tech" },
   ];
 
-  const projects = [
+  const projects = useMemo(() =>  [
     {
       title: "Mobylis",
       description: "Projects.p0",
@@ -80,7 +80,7 @@ export default function Projects() {
       github: "https://github.com/azzichaymae/Projet_SANLAM",
       picture: "/images/Picture1.png",
     },
-  ];
+  ], []);
 
   const certificates = [
     { name: "Projects.cer1", issuer: "Cisco", date: "2025" },

@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useI18n } from "../hooks/useI18n";
 
 const AIChat = () => {
-  const { t, i18n } = useI18n(); // Assuming useI18n provides i18n for language change
+  const { t, i18n } = useI18n(); 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,6 @@ const AIChat = () => {
 
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
 
-  // List of all example questions
   const allQuestions = [
     "What technologies do you use?",
     "Can you tell me about your final year project?",
@@ -26,7 +25,6 @@ const AIChat = () => {
     "Which frontend frameworks do you prefer?",
   ];
 
-  // Rotate example questions each time chat opens
   useEffect(() => {
     if (isOpen) {
       const shuffled = allQuestions.sort(() => 0.5 - Math.random());
@@ -34,10 +32,9 @@ const AIChat = () => {
     }
   }, [isOpen]);
 
-  // Update initial message when language changes
   useEffect(() => {
     setMessages([{ role: "assistant", content: t("AIssistant.content") }]);
-  }, [t, i18n.language]); // Re-run when translation or language changes
+  }, [t, i18n.language]); 
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });

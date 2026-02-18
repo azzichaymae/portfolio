@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
           <a
             href="https://github.com/azzichaymae"
             target="_blank"
-            
+            rel="noreferrer" 
             className="text-gray-600 hover:text-orange-500 transition"
           >
             <FaGithub size={24} />
@@ -23,7 +23,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/azzichaymae"
             target="_blank"
-            
+            rel="noreferrer" 
             className="text-gray-600 hover:text-orange-500 transition"
           >
             <FaLinkedin size={24} />
