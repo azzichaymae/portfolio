@@ -30,7 +30,7 @@ const AIChat = () => {
       const shuffled = allQuestions.sort(() => 0.5 - Math.random());
       setExampleQuestions(shuffled.slice(0, 4));
     }
-  }, [isOpen]);
+  }, [isOpen, allQuestions]);
 
   useEffect(() => {
     setMessages([{ role: "assistant", content: t("AIssistant.content") }]);
