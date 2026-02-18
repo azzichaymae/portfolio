@@ -16,6 +16,14 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Mobylis",
+      description: "Projects.p0",
+      tech: ["IONIC", "Firebase", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/azzichaymae/mobylisApp",
+      picture: "/images/mobylis.jpg",
+
+    },
+    {
       title: "Mugs Atelier",
       description: "Projects.p1",
       tech: ["React", "Django", "MySQL", "Tailwind CSS", "Jira"],
