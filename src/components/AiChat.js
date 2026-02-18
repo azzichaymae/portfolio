@@ -3,6 +3,18 @@ import { FaPaperPlane, FaRobot, FaUser, FaComments, FaTimes } from "react-icons/
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useI18n } from "../hooks/useI18n";
 
+
+const ALL_QUESTIONS = [
+  "What technologies do you use?",
+  "Can you tell me about your final year project?",
+  "What’s your favorite programming language?",
+  "Where did you study?",
+  "Tell me about your internships",
+  "What projects have you done with JavaFX?",
+  "How did you build the Insurance Platform?",
+  "Which frontend frameworks do you prefer?",
+];
+
 const AIChat = () => {
   const { t, i18n } = useI18n(); 
   const [messages, setMessages] = useState([]);
@@ -14,23 +26,12 @@ const AIChat = () => {
 
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
 
-  const allQuestions = [
-    "What technologies do you use?",
-    "Can you tell me about your final year project?",
-    "What’s your favorite programming language?",
-    "Where did you study?",
-    "Tell me about your internships",
-    "What projects have you done with JavaFX?",
-    "How did you build the Insurance Platform?",
-    "Which frontend frameworks do you prefer?",
-  ];
-
-  useEffect(() => {
+   useEffect(() => {
     if (isOpen) {
-      const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+      const shuffled = [...ALL_QUESTIONS].sort(() => 0.5 - Math.random());
       setExampleQuestions(shuffled.slice(0, 4));
     }
-  }, [isOpen, allQuestions]);
+  }, [isOpen]);
 
   useEffect(() => {
     setMessages([{ role: "assistant", content: t("AIssistant.content") }]);
