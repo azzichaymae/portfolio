@@ -20,7 +20,9 @@
   "Skills": {
     "title": "Compétences & Outils",
     "Database & Cloud" : "Base de données & Cloud",
-    "Tools" : "Outils"
+    "Tools" : "Outils",
+    "Backend" : "Backend",
+    "Frontend" : "Frontend"
   },
   "Projects": {
     "title": "Mes Projets",
