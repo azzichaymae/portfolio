@@ -20,7 +20,7 @@ export default function Projects() {
       description: "Projects.p0",
       tech: ["IONIC", "Firebase", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/azzichaymae/mobylisApp",
-      picture: "/images/mobylis.jpg",
+      picture: "/images/mobylis.png",
 
     },
     {
